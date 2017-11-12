@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import environ
+
+
+env = environ.Env()
+env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -83,8 +88,9 @@ WSGI_APPLICATION = 'phone_track.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': os.environ.get('DATABASE_URL', default='postgresql://postgres:admin@localhost/phone_task.'),
+    'default': env.db('DATABASE_URL', default='postgresql://postgres:admin@localhost/phone_task.'),
 }
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
