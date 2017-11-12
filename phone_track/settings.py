@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import environ
 
+ROOT_DIR = environ.Path(__file__)
 
 env = environ.Env()
 env.read_env()
@@ -88,9 +89,8 @@ WSGI_APPLICATION = 'phone_track.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgresql://postgres:admin@localhost/phone_task.'),
+    'default': os.environ.get('DATABASE_URL', default='postgresql://postgres:admin@localhost/phone_task.'),
 }
-DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 
