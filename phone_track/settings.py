@@ -11,15 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import environ
 
-ROOT_DIR = environ.Path(__file__)
 
-env = environ.Env()
-env.read_env()
-
-# # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -91,8 +86,6 @@ WSGI_APPLICATION = 'phone_track.wsgi.application'
 DATABASES = {
     'default': os.environ.get('DATABASE_URL', default='postgresql://postgres:admin@localhost/phone_task.'),
 }
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
