@@ -5,3 +5,4 @@ markdown
 pytz
 psycopg2
 django-environ
+gunicorn==19.4.4
