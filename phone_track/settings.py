@@ -14,7 +14,8 @@ import os
 import environ
 
 
-root = environ.Path(__file__) - 3 # three folder back (/a/b/c/ - 3 = /)
+root = environ.Path(__file__) - 2 # three folder back (/a/b/c/ - 3 = /)
+print(root)
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
 environ.Env.read_env() # reading .env file
 
@@ -133,5 +134,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR('staticfiles')
-print(STATIC_ROOT)
+# STATIC_ROOT = BASE_DIR('staticfiles')
+# print(STATIC_ROOT)
