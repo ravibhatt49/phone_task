@@ -21,3 +21,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('accounts.urls', namespace='accounts')),
 ]
+
