@@ -14,7 +14,7 @@ import os
 import environ
 
 
-root = environ.Path(__file__) - 1 # three folder back (/a/b/c/ - 3 = /)
+root = environ.Path(__file__) # three folder back (/a/b/c/ - 3 = /)
 print('===========',root)
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
 environ.Env.read_env() # reading .env file
