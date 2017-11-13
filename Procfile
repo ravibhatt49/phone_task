@@ -1,1 +1,1 @@
-web: gunicorn simplerest.wsgi -b 0.0.0.0:$PORT -w 3 --max-requests 250 --preload
+web: gunicorn phone_track.wsgi -b 0.0.0.0:$PORT -w 3 --max-requests 250 --preload
