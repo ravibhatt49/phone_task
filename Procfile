@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath api config.wsgi
+web: gunicorn phone_track.wsgi -b 0.0.0.0:$PORT --access-logfile - --error-logfile - --log-level debug --debug
