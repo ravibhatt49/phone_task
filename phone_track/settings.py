@@ -134,4 +134,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = str(root('static'))
+STATIC_ROOT = str(root('staticfiles'))
