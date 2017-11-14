@@ -6,5 +6,5 @@ pytz
 psycopg2
 django-environ
 django-rest-swagger
-gunicorn==19.4.4
+gunicorn==19.4.3
 whitenoise
