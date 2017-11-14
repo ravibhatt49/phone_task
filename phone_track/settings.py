@@ -140,8 +140,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/phone_track/static/'
-print('===========>',os.path.dirname(os.path.join(BASE_DIR, 'phone_track/static')))
+print('===========>',os.path.join(BASE_DIR, 'static'))
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.dirname(os.path.join(BASE_DIR, 'phone_track/static')),
+    os.path.join(BASE_DIR, 'phone_track/static'),
 )
