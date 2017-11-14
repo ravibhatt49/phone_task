@@ -17,10 +17,10 @@ import environ
 root = environ.Path(__file__) - 2 # three folder back (/a/b/c/ - 3 = /)
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
 environ.Env.read_env() # reading .env file
+print('===========',root)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print('===========',BASE_DIR)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -137,10 +137,17 @@ USE_TZ = True
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = str(root('staticfiles'))
+
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = (
+#     str(root.path('static')),
+# )
+
+
+
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -160,3 +167,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_DIRS = (
 #     os.path.dirname(os.path.join(BASE_DIR, 'static')),
 # )
+# =======
+#     os.path.dirname(os.path.join(BASE_DIR)),
+# )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
