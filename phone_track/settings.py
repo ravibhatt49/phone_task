@@ -144,5 +144,4 @@ print('===========>',os.path.dirname(os.path.join(BASE_DIR)))
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.dirname(os.path.join(BASE_DIR)),
-    os.path.dirname(os.path.dirname(os.path.join(BASE_DIR))),
 )
