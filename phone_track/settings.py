@@ -145,3 +145,8 @@ print('===========>',os.path.dirname(os.path.join(BASE_DIR)))
 STATICFILES_DIRS = (
     os.path.dirname(os.path.join(BASE_DIR)),
 )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
