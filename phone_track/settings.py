@@ -17,10 +17,10 @@ import environ
 root = environ.Path(__file__) - 2 # three folder back (/a/b/c/ - 3 = /)
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
 environ.Env.read_env() # reading .env file
+print('===========',root)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-print('===========',BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -138,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = str(root('staticfiles'))
+STATIC_ROOT = str(root('static'))
 
 STATIC_URL = '/static/'
 
