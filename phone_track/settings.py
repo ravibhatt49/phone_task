@@ -137,7 +137,7 @@ USE_TZ = True
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT)
 # STATIC_ROOT = str(root('staticfiles'))
 
 # STATIC_URL = '/static/'
@@ -152,7 +152,7 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.dirname(os.path.join(PROJECT_ROOT)),
+    os.path.join(PROJECT_ROOT),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
