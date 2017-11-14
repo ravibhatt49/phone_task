@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'django_filters',
     'rest_framework',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'phone_track.wsgi.application'
 
+
+SWAGGER_SETTINGS = {
+    'DOC_EXPANSION': 'list',
+    'APIS_SORTER': 'alpha'
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
