@@ -14,12 +14,12 @@ import os
 import environ
 
 
-root = environ.Path(__file__) # three folder back (/a/b/c/ - 3 = /)
+root = environ.Path(__file__) - 2 # three folder back (/a/b/c/ - 3 = /)
 env = environ.Env(DEBUG=(bool, False),) # set default values and casting
-# environ.Env.read_env() # reading .env file
+environ.Env.read_env() # reading .env file
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 print('===========',BASE_DIR)
 
 
@@ -138,18 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_URL = '/static/'
-
-STATIC_ROOT = str(root('staticfiles'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    str(root.path('static')),
+    os.path.dirname(os.path.join(BASE_DIR, 'static')),
 )
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
